@@ -1,0 +1,862 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #000;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0;
+    margin-left: 3rem;
+    position: relative;
+}
+
+.profile-photo {
+    position: absolute;
+    top: 7rem;
+    right: -27rem;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #333;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.intro {
+    position: relative;
+    padding-right: 200px;
+}
+
+header {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.intro h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.projects h1,
+.photography h1,
+.thoughts h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.intro h2 {
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+    max-width: 65ch;
+    margin-left: 0;
+}
+
+.linkedin-link {
+    margin-top: 1.5rem;
+}
+
+.linkedin-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f4f1f1;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.linkedin-link a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.linkedin-icon {
+    width: 40px;
+    height: 40px;
+    fill: #faf9f9;
+}
+
+.intro ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.intro ul li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #666;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+}
+
+a:hover {
+    text-decoration-color: #999;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1.5rem;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    margin-bottom: 0.75rem;
+    color: #ccc;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #333;
+    border-radius: 4px;
+    font-size: 1.05rem;
+    color: #ccc;
+}
+
+.tag.python {
+    background-color: #3776ab;
+    color: #fff;
+}
+
+.tag.javascript {
+    background-color: #f7df1e;
+    color: #000;
+}
+
+.photography {
+    margin-bottom: 3rem;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.thoughts-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    padding-left: 0;
+}
+
+.thought {
+    margin-bottom: 0.5rem;
+}
+
+.thought a {
+    font-size: 1.2rem;
+}
+
+.contact {
+    margin-top: 4rem;
+}
+
+.contact h1,
+.contact h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #999;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    flex-shrink: 0;
+}
+
+.location .contact-icon {
+    stroke: #999;
+}
+
+.instagram-link-container {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.post {
+    max-width: 65ch;
+}
+
+.post-content {
+    margin-top: 1.5rem;
+    line-height: 1.8;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.back-link {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.back-link a {
+    font-size: 1.14rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        margin-left: 1rem;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .project h3 {
+        font-size: 1.32rem;
+    }
+
+    .intro {
+        padding-right: 0;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        margin-bottom: 1rem;
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+/* Game Styles */
+.game {
+    margin-bottom: 3rem;
+}
+
+.game-area {
+    margin-top: 2rem;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.choice-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.choice-btn:hover {
+    background-color: #444;
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+.choice-btn .emoji {
+    font-size: 3rem;
+}
+
+.choice-btn .label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.result-area {
+    margin-top: 2rem;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.selection {
+    text-align: center;
+}
+
+.selection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.choice-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emoji-large {
+    font-size: 5rem;
+}
+
+.choice-display p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.vs {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.result-message {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.result-message.win {
+    color: #4ade80;
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.result-message.lose {
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.1);
+}
+
+.result-message.draw {
+    color: #fbbf24;
+    background-color: rgba(251, 191, 36, 0.1);
+}
+
+.play-again-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-again-btn:hover {
+    background-color: #444;
+    border-color: #fff;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    flex-wrap: wrap;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.score-label {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.score-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.project h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.project h3 a:hover {
+    text-decoration: underline;
+}
+
+/* Timer Styles */
+.timer-section {
+    margin-bottom: 3rem;
+}
+
+.timer-description {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.timer-display {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.timer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timer-line {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.timer-label {
+    color: #999;
+    min-width: 60px;
+}
+
+.timer-value {
+    color: #fff;
+    font-weight: 600;
+}
+
+.timer-code {
+    margin-top: 2rem;
+}
+
+.timer-code h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.timer-code pre {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.timer-code code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    white-space: pre;
+}
+
+/* Area Calculator Styles */
+.calculator-section {
+    margin-bottom: 3rem;
+}
+
+.calculator-description {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.shape-menu {
+    margin-bottom: 2rem;
+}
+
+.shape-menu h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.shape-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.shape-btn {
+    padding: 1rem;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.shape-btn:hover {
+    background-color: #444;
+    border-color: #fff;
+    transform: translateX(5px);
+}
+
+.calculator-form {
+    margin-top: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.input-group input {
+    padding: 0.75rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.calculate-btn,
+.back-btn {
+    padding: 0.75rem 2rem;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calculate-btn:hover,
+.back-btn:hover {
+    background-color: #444;
+    border-color: #fff;
+}
+
+.result-display {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.result-display.success {
+    color: #4ade80;
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.result-display.error {
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.1);
+}
+
+.calculator-code {
+    margin-top: 3rem;
+}
+
+.calculator-code h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.calculator-code pre {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.calculator-code code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    white-space: pre;
+}
+
+/* Text Reverser Styles */
+.reverser-section {
+    margin-bottom: 3rem;
+}
+
+.reverser-description {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.reverser-form {
+    margin-bottom: 2rem;
+}
+
+.reverser-form .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.reverser-form input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.75rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.reverser-form input:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.reverse-btn {
+    padding: 0.75rem 2rem;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reverse-btn:hover {
+    background-color: #444;
+    border-color: #fff;
+}
+
+.results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-label {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.result-value {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    word-break: break-word;
+}
+
+.reverser-code {
+    margin-top: 3rem;
+}
+
+.reverser-code h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.reverser-code pre {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.reverser-code code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    white-space: pre;
+}

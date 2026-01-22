@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reverser - Alperen Dikici</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name"><a href="index.html" style="text-decoration: none; color: #fff;">alperen dikici</a></h1>
+        </header>
+
+        <section class="reverser-section">
+            <h1>Text Reverser</h1>
+            <p class="reverser-description">Reverse a text in two different ways: reverse the entire text or reverse word by word.</p>
+            
+            <div class="reverser-form">
+                <div class="input-group">
+                    <label for="input-text">Enter a sentence:</label>
+                    <input type="text" id="input-text" placeholder="Type your text here..." required>
+                </div>
+                <button class="reverse-btn" id="reverse-btn">Reverse Text</button>
+            </div>
+
+            <div class="results" id="results" style="display: none;">
+                <div class="result-item">
+                    <span class="result-label">Original text:</span>
+                    <span class="result-value" id="original-text"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Completely reversed:</span>
+                    <span class="result-value" id="completely-reversed"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Word by word reversed:</span>
+                    <span class="result-value" id="word-reversed"></span>
+                </div>
+            </div>
+        </section>
+
+        <div class="reverser-code">
+            <h3>Source Code (Python)</h3>
+            <pre><code># coding=utf-8
+
+"""
+    Reverse a given text
+
+    # ----- REVERSE THE ENTIRE SENTENCE -----
+    # This method reverses the entire sentence
+    # The reverse_text function directly performs this operation
+
+    # ----- REVERSE WORD BY WORD -----
+    # This method reverses the sentence word by word
+    # First, split the sentence by space character and assign to an array
+    # Then reverse each element of this array
+    # The reverse_text function already reverses the incoming string
+    # So we will send each string one by one to that function
+    # After reversing, we will write our array together with " ".join
+"""
+
+input_text = input("Enter a sentence: ")
+reversed_text = ""
+
+
+def reverse_text(text, reversed):
+    for i in range(len(text) - 1, -1, -1):
+        reversed += text[i]
+    return reversed
+
+
+words = []
+for i in input_text.split(' '):
+    words.append(reverse_text(i, ""))
+
+completely_reversed = reverse_text(input_text, reversed_text)
+word_by_word_reversed = " ".join(words)
+
+print(
+    """
+    Original text:                  {}
+    
+    Completely reversed:            {}
+    
+    Word by word reversed:          {}
+    
+    """.format(input_text, completely_reversed, word_by_word_reversed))</code></pre>
+        </div>
+    </div>
+    <script src="text-reverser.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator - Alperen Dikici</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name"><a href="index.html" style="text-decoration: none; color: #fff;">alperen dikici</a></h1>
+        </header>
+
+        <section class="calculator-section">
+            <h1>Area Calculator</h1>
+            <p class="calculator-description">Calculate the area of various geometric shapes.</p>
+            
+            <div class="shape-menu">
+                <h3>Select a shape:</h3>
+                <div class="shape-buttons">
+                    <button class="shape-btn" data-shape="square">1 - Square</button>
+                    <button class="shape-btn" data-shape="rectangle">2 - Rectangle</button>
+                    <button class="shape-btn" data-shape="trapezoid">3 - Trapezoid</button>
+                    <button class="shape-btn" data-shape="parallelogram">4 - Parallelogram</button>
+                    <button class="shape-btn" data-shape="rhombus">5 - Rhombus</button>
+                </div>
+            </div>
+
+            <div class="calculator-form" id="calculator-form" style="display: none;">
+                <div id="input-fields"></div>
+                <button class="calculate-btn" id="calculate-btn">Calculate</button>
+                <div class="result-display" id="result-display"></div>
+                <button class="back-btn" id="back-btn">Back to Menu</button>
+            </div>
+        </section>
+
+        <div class="calculator-code">
+            <h3>Source Code (Python)</h3>
+            <pre><code># coding=utf-8
+
+"""
+    Calculate areas of geometric shapes
+"""
+
+
+def square(side):
+    print("Area of square = {}".format(side * side))
+
+
+def rectangle(length, width):
+    print("Area of rectangle = {}".format(length * width))
+
+
+def trapezoid(base1, base2, height):
+    print("Area of trapezoid = {}".format(((base1 + base2) * height) / 2))
+
+
+def parallelogram(base, height):
+    print("Area of parallelogram = {}".format(base * height))
+
+
+def rhombus(diagonal1, diagonal2):
+    print("Area of rhombus = {}".format((diagonal1 * diagonal2) / 2))
+
+
+if __name__ == '__main__':
+    print("""
+    1 - Square
+    2 - Rectangle
+    3 - Trapezoid
+    4 - Parallelogram
+    5 - Rhombus
+    """)
+
+    choice = int(input("Shape to calculate area: "))
+
+    if choice == 1:
+        side = int(input("Side of square: "))
+        square(side)
+
+    elif choice == 2:
+        length = int(input("Length of rectangle: "))
+        width = int(input("Width of rectangle: "))
+        rectangle(length, width)
+
+    elif choice == 3:
+        base1 = int(input("Lower base of trapezoid: "))
+        base2 = int(input("Upper base of trapezoid: "))
+        height = int(input("Height of trapezoid: "))
+        trapezoid(base1, base2, height)
+
+    elif choice == 4:
+        base = int(input("Base of parallelogram: "))
+        height = int(input("Height of parallelogram: "))
+        parallelogram(base, height)
+
+    elif choice == 5:
+        diagonal1 = int(input("First diagonal of rhombus: "))
+        diagonal2 = int(input("Second diagonal of rhombus: "))
+        rhombus(diagonal1, diagonal2)
+
+    else:
+        print("Please enter only one of the specified numbers.")</code></pre>
+        </div>
+    </div>
+    <script src="area-calculator.js"></script>
+</body>
+</html>

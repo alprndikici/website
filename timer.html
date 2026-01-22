@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer - Alperen Dikici</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name"><a href="index.html" style="text-decoration: none; color: #fff;">alperen dikici</a></h1>
+        </header>
+
+        <section class="timer-section">
+            <h1>Timer</h1>
+            <p class="timer-description">A simple application that displays the current date and time in a formatted way.</p>
+            
+            <div class="timer-display" id="timer-display">
+                <div class="timer-content">
+                    <div class="timer-line">
+                        <span class="timer-label">date:</span>
+                        <span class="timer-value" id="date-display"></span>
+                    </div>
+                    <div class="timer-line">
+                        <span class="timer-label">time:</span>
+                        <span class="timer-value" id="time-display"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timer-code">
+                <h3>Source Code (Python)</h3>
+                <pre><code># coding=utf-8
+
+"""
+    Timer usage
+    A small application that displays the date
+"""
+
+import time
+import os
+import platform
+
+
+def clear():
+    if platform.system() == 'Linux' or platform.system() == 'Darwin':
+        os.system('clear')
+    else:
+        os.system('cls')
+
+
+while True:
+
+    time_data = time.localtime()
+    year = time_data[0]
+    month = time_data[1]
+    day = time_data[2]
+    hour = time_data[3]
+    minute = time_data[4]
+    second = time_data[5]
+
+    time.sleep(1)
+    clear()
+
+    print("""
+        date: {}/{}/{}
+        time : {}:{}:{}
+        """.format(day, month, year, hour, minute, second))</code></pre>
+            </div>
+        </section>
+    </div>
+    <script src="timer.js"></script>
+</body>
+</html>
