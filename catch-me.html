@@ -16,19 +16,8 @@
             <h1>Catch Me</h1>
             <p class="game-description">Try to catch the text with your cursor! The text will escape to a different position when you get too close.</p>
             
-            <div class="game-area" id="game-area">
-                <div class="catch-me-text" id="catch-me-text">Catch me!</div>
-            </div>
-
-            <div class="game-stats">
-                <div class="stat-item">
-                    <span class="stat-label">Attempts:</span>
-                    <span class="stat-value" id="attempts">0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Escapes:</span>
-                    <span class="stat-value" id="escapes">0</span>
-                </div>
+            <div class="game-area-container">
+                <canvas id="game-canvas" width="800" height="500"></canvas>
             </div>
         </section>
 
@@ -56,8 +45,6 @@ class CatchMeGame:
         self.width = 800
         self.height = 600
         self.escape_distance = 100
-        self.attempts = 0
-        self.escapes = 0
         
         # Create canvas
         self.canvas = tk.Canvas(
@@ -82,28 +69,6 @@ class CatchMeGame:
             fill="#4ade80"
         )
         
-        # Create stats labels
-        self.stats_frame = tk.Frame(self.window, bg="#1a1a1a")
-        self.stats_frame.pack(pady=10)
-        
-        self.attempts_label = tk.Label(
-            self.stats_frame,
-            text="Attempts: 0",
-            font=("Arial", 12),
-            bg="#1a1a1a",
-            fg="#fff"
-        )
-        self.attempts_label.pack(side=tk.LEFT, padx=20)
-        
-        self.escapes_label = tk.Label(
-            self.stats_frame,
-            text="Escapes: 0",
-            font=("Arial", 12),
-            bg="#1a1a1a",
-            fg="#fff"
-        )
-        self.escapes_label.pack(side=tk.LEFT, padx=20)
-        
         # Bind mouse movement
         self.canvas.bind("<Motion>", self.on_mouse_move)
         
@@ -116,17 +81,12 @@ class CatchMeGame:
         margin = 50
         self.text_x = random.randint(margin, self.width - margin)
         self.text_y = random.randint(margin, self.height - margin)
-        self.escapes += 1
-        self.escapes_label.config(text="Escapes: {}".format(self.escapes))
         
         # Update text position
         self.canvas.coords(self.text_id, self.text_x, self.text_y)
     
     def on_mouse_move(self, event):
         """Handle mouse movement"""
-        self.attempts += 1
-        self.attempts_label.config(text="Attempts: {}".format(self.attempts))
-        
         cursor_x = event.x
         cursor_y = event.y
         
