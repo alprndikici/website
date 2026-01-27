@@ -972,3 +972,92 @@ a:hover {
         gap: 1.5rem;
     }
 }
+
+/* Weather Styles */
+.weather-section {
+    margin-bottom: 3rem;
+}
+
+.weather-description {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.weather-display {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.weather-note {
+    color: #999;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.weather-output {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.weather-status {
+    color: #999;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.weather-current {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.weather-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.weather-label {
+    color: #999;
+    min-width: 130px;
+}
+
+.weather-value {
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+.weather-code {
+    margin-top: 3rem;
+}
+
+.weather-code h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.weather-code pre {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.weather-code code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    white-space: pre;
+}
