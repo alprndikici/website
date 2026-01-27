@@ -880,3 +880,107 @@ a:hover {
     color: #e0e0e0;
     white-space: pre;
 }
+
+/* Catch Me Game Styles */
+.game-section {
+    margin-bottom: 3rem;
+}
+
+.game-description {
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.catch-me-text {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4ade80;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s ease-out, opacity 0.2s;
+    white-space: nowrap;
+}
+
+.game-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.game-code {
+    margin-top: 3rem;
+}
+
+.game-code h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.game-code pre {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.game-code code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    white-space: pre;
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        height: 400px;
+    }
+    
+    .catch-me-text {
+        font-size: 2rem;
+    }
+    
+    .game-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
