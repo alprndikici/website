@@ -23,7 +23,7 @@ highlight the projects I have built, and provide a seamless way for professional
 
 The project is built using the following stack and development tools:
 
-- **Frontend:** [e.g., HTML5, CSS3, JavaScript (ES6+) or React / Next.js]
-- **Design & Styling:** [e.g., Tailwind CSS, Bootstrap, or Adobe Photoshop for asset optimization]
+- **Frontend:** [e.g., HTML, CSS, JavaScript]
+- **Design & Styling:** [e.g.Adobe Photoshop for asset optimization]
 - **Hosting:** GitHub Pages
 - **Version Control:** Git & GitHub
